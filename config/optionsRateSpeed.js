@@ -3,17 +3,17 @@ import slowDown from "express-slow-down";
 
 // Tips coding garden with CJ
 // https://www.youtube.com/watch?v=nCWE6eonL7k
-// Batasi 30 request per 1800 detik atau 30 menit
+// Batasi 60 request per 300 detik atau 5 menit
 const rateLimiter = rateLimit({
-    windowMs: 1800 * 1000,
-    max: 30,
+    windowMs: 300 * 1000,
+    max: 60,
 });
 
 // Turunkan kecepatan response setelah request pertama
-// Dalam rentang waktu 1800 detik atau 30 menit
+// Dalam rentang waktu 300 detik atau 5 menit
 // Pada endpoint api yang sama
 const speedLimiter = slowDown({
-    windowMs: 30 * 1000,
+    windowMs: 300 * 1000,
     delayAfter: 25,
     delayMs: 250,
 });

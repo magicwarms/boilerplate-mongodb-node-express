@@ -59,7 +59,7 @@ function startServer({ port = process.env.PORT } = {}) {
     app.use(bodyParser.urlencoded({ extended: true }));
     // I mount my entire app to the /api route (or you could just do "/" if you want)
     // Use rate limiter and speed limiter for prevent brute force and spamming attacks
-    app.use("/api/v1", router, speedLimiter, rateLimiter, corsRequest);
+    app.use("/api/v1", [rateLimiter, speedLimiter, corsRequest], router);
     // handle 404
     app.use(function (_req, res, _next) {
         return res.status(404).json({
