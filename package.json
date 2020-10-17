@@ -1,0 +1,26 @@
+{
+  "name": "boilerplate-mongodb-node-express",
+  "version": "1.0.0",
+  "description": "Boilerplate mongodb node express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magicwarms/boilerplate-mongodb-node-express.git"
+  },
+  "keywords": [
+    "andhana",
+    "mongodb",
+    "node",
+    "expressjs",
+    "boilerplate"
+  ],
+  "author": "Andhana Utama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magicwarms/boilerplate-mongodb-node-express/issues"
+  },
+  "homepage": "https://github.com/magicwarms/boilerplate-mongodb-node-express#readme"
+}
