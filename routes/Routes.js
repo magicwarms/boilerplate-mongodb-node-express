@@ -10,4 +10,11 @@ router.get("/welcome", (_req, res) => {
     });
 });
 
-export { router };
+import Posts from "../app/controllers/PostController";
+
+router.post("/createupdate/post", Posts.createOrUpdatePost);
+router.get("/get/post", Posts.getAllPost);
+router.get("/getbyid/post", Posts.getPostById);
+router.delete("/delete/post", Posts.deletePostById);
+
+export default router;

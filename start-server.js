@@ -5,7 +5,7 @@ import morgan from "morgan";
 import { corsRequest } from "./config/cors";
 import { speedLimiter, rateLimiter } from "./config/optionsRateSpeed";
 import bodyParser from "body-parser";
-import { router } from "./routes/Routes";
+import router from "./routes/Routes";
 // set timezone
 process.env.TZ = "Asia/Jakarta";
 
@@ -63,16 +63,16 @@ function startServer({ port = process.env.PORT } = {}) {
     // handle 404
     app.use(function (_req, res, _next) {
         return res.status(404).json({
-            status: "NOT_FOUND",
+            success: false,
             data: {},
             message: "API route not found",
         });
     });
     // handle 500 Any error
     app.use(function (err, _req, res, _next) {
-        console.log(err);
+        console.error(err);
         return res.status(500).json({
-            status: "ERROR",
+            success: false,
             data: {
                 error: err.message,
             },

@@ -1,5 +1,5 @@
 {
     "restartable": "rs",
     "ignore": [".git", "node_modules/**/node_modules"],
-    "watch": ["app", "models", "config", "schema", "index.js", "start-server.js"]
+    "watch": ["app", "config", "index.js", "start-server.js", "routes/Routes.js"]
 }
