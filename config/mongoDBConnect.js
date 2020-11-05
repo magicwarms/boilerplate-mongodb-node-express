@@ -23,10 +23,12 @@ export async function connectMongoDb() {
     try {
         await mongoose.connect(process.env.MONGODBURI, {
             useNewUrlParser: true,
+            useUnifiedTopology: true,
             keepAlive: true,
-            autoReconnect: true,
-            reconnectTries: 3,
-            reconnectInterval: 5000,
+            useCreateIndex: true,
+            // autoReconnect: true,
+            // reconnectTries: 3,
+            // reconnectInterval: 5000,
             poolSize: 10,
             socketTimeoutMS: 30000,
         });

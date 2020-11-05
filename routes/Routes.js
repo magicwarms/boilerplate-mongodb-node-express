@@ -11,10 +11,14 @@ router.get("/welcome", (_req, res) => {
 });
 
 import Posts from "../app/controllers/PostController";
+import Categories from "../app/controllers/CategoryController";
 
 router.post("/createupdate/post", Posts.createOrUpdatePost);
 router.get("/get/post", Posts.getAllPost);
 router.get("/getbyid/post", Posts.getPostById);
 router.delete("/delete/post", Posts.deletePostById);
+
+router.post("/createupdate/category", Categories.createOrUpdateCategory);
+router.get("/get/category", Categories.getAllCategories);
 
 export default router;

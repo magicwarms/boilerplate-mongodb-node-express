@@ -3,6 +3,11 @@ import _ from "lodash";
 
 export async function createOrUpdatePost(data) {
     if (!_.isEmpty(data.id)) return await PostRepository.updatePost(data);
+    let arrCategoryId = [];
+    data.categories.forEach((item) => {
+        arrCategoryId.push(item.categoryId);
+    });
+    data.categories = arrCategoryId;
     return await PostRepository.createPost(data);
 }
 
@@ -17,6 +22,5 @@ export async function getPostById(postId) {
 
 export async function deletePostById(postId) {
     const deleteData = await PostRepository.deletePostById(postId);
-    console.log(deleteData);
     return deleteData;
 }

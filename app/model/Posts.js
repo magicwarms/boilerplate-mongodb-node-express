@@ -15,6 +15,13 @@ const PostSchema = new Schema(
             trim: true,
             minlength: [4, "description is too short!"],
         },
+        categories: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Categories",
+                required: true,
+            },
+        ],
     },
     {
         timestamps: true,

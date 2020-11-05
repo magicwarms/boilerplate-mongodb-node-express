@@ -8,6 +8,7 @@ export default {
                 id: req.body.id,
                 title: req.body.title,
                 description: req.body.description,
+                categories: JSON.parse(req.body.categories),
             };
             const createOrUpdatePost = await PostService.createOrUpdatePost(data);
             const message = _.isEmpty(data.id) ? "Simpan" : "Perbaharui";

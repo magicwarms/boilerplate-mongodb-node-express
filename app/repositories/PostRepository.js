@@ -4,12 +4,13 @@ export async function createPost(data) {
     const post = new Posts({
         title: data.title,
         description: data.description,
+        categories: data.categories,
     });
     return await post.save();
 }
 
 export async function getPosts(findData) {
-    return await Posts.find(findData).sort({ createdAt: -1 });
+    return await Posts.find(findData).populate("categories").sort({ createdAt: -1 });
 }
 
 export async function updatePost(data) {
@@ -31,5 +32,5 @@ export async function getPostById(postId) {
 }
 
 export async function deletePostById(postId) {
-    return await Posts.remove({ _id: postId });
+    return await Posts.deleteOne({ _id: postId });
 }
